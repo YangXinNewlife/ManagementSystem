@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ 	<!--采用开发模式 -->
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="default" extends="struts-default" namespace="/">
+	    <!--测试struts环境配置的action  -->
+		<action name="hello">
+			<result>/hello.jsp</result>
+		</action>
+		 <!--测试能否进入欢迎界面  -->
+		<action name="welcome">
+			<result>/welcome.html</result>
+		</action>
+		<!--测试能否进入主界面  -->
+		<action name="index">
+			<result>/Index.jsp</result>
+		</action>
+		 <!--登录成功进入主页面，失败重新登录  -->
+		<action name="GoLogin" class="edu.lstc.action.GoLogin">
+			<result name="input">/login.jsp</result>
+			<result name="success">/Index.jsp</result>
+		</action>
+		<!--主页面之员工信息查询 -->
+		<action name="WorkerQuery"
+			class="edu.lstc.action.WorkerQuery">
+			<result name="success">/WorkerQuery.jsp</result>
+		</action>
+		<!--主页面之员工工资查询 -->
+		<action name="SalaryQuery"
+			class="edu.lstc.action.SalaryQuery">
+			<result name="success">/SalaryQuery.jsp</result>
+		</action>
+		<!--主页面之经理查询信息 -->
+		<action name="ManagerQuery"
+			class="edu.lstc.action.ManagerQuery">
+			<result name="success">/ManagerQuery.jsp</result>
+		</action>
+		<!--主页面之经理查询工资 -->
+		<action name="ManagerQuery2"
+			class="edu.lstc.action.ManagerQuery2">
+			<result name="success">/ManagerQuery2.jsp</result>
+		</action>
+		<!--主页面之修改员工信息 -->
+		<action name="WorkerUpdate"
+			class="edu.lstc.action.WorkerUpdate">
+			<result name="success">/WorkerUpdate.jsp</result>
+		</action>
+		<!--主页面之增加员工 -->
+		<action name="WorkerAdd" class="edu.lstc.action.WorkerAdd">
+			<result name="success">/WorkerAdd.jsp</result>
+		</action>
+		<!--主页面之修改工资 -->
+		<action name="UpdateSalary"
+			class="edu.lstc.action.UpdateSalary">
+			<result name="success">/UpdateSalary.jsp</result>
+		</action>
+		<!--主页面之查询所有信息 -->
+		<action name="QueryAll" class="edu.lstc.action.QueryAll">
+			<result name="success">/QueryAll.jsp</result>
+		</action>
+		<!--主页面之修改密码 -->
+		<action name="PasswordUpdate"
+			class="edu.lstc.action.PasswordUpdate">
+			<result name="success">/PasswordUpdate.jsp</result>
+		</action>
+		<!--主页面之退出系统 -->
+		<action name="Quit" class="edu.lstc.action.Quit">
+			<result name="success">/login.jsp</result>
+		</action>
+	</package>
+</struts>
